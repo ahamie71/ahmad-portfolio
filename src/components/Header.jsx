@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <header className="w-full py-4 px-8 flex justify-between items-center bg-gray-100 dark:bg-gray-900 fixed top-0 z-50">
-      <h1 className="text-2xl font-bold text-blue-600">Ahmad</h1>
-      <nav className="space-x-4">
-        <a href="#about" className="hover:text-blue-500">About</a>
-        <a href="#projects" className="hover:text-blue-500">Projects</a>
-        <a href="#contact" className="hover:text-blue-500">Contact</a>
+    <header className="bg-gray-900 text-white py-4 sticky top-0 z-50">
+      <nav className="max-w-6xl mx-auto flex justify-between px-4">
+        <h1 className="text-xl font-bold">Ahmad Portfolio</h1>
+        <div className="flex gap-4">
+          <Link to="/" className="hover:text-purple-400">Home</Link>
+          <a href="#projects" className="hover:text-purple-400">Projets</a>
+          <a href="#contact" className="hover:text-purple-400">Contact</a>
+        </div>
       </nav>
     </header>
   )
