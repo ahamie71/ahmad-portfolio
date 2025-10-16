@@ -1,21 +1,31 @@
 import React from 'react'
-import { skills } from '../data/skills.js'
+import { motion } from 'framer-motion'
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-100 text-gray-900">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-6 text-center">À propos de moi</h2>
-        <p className="text-lg mb-6">
-          Je suis un développeur web passionné par la création d'applications modernes et performantes avec React et Node.js.
+    <section
+      id="about"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-white text-black dark:bg-black dark:text-white"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl font-bold mb-6"
+      >
+        À propos de moi
+      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-2xl p-6 md:p-8 rounded-2xl bg-white text-gray-800 border border-yellow-100 shadow-sm dark:bg-neutral-900 dark:text-gray-100 dark:border-yellow-500/20"
+      >
+        <p className="text-lg leading-relaxed">
+          Je suis développeur web full-stack, passionné par les technologies modernes comme React, Tailwind CSS et Node.js.
+          J’adore créer des expériences élégantes, performantes et interactives.
         </p>
-        <h3 className="text-2xl font-semibold mb-4">Compétences :</h3>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill, i) => (
-            <span key={i} className="bg-purple-600 text-white px-3 py-1 rounded-full">{skill}</span>
-          ))}
-        </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
